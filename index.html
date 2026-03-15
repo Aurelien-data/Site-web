@@ -999,10 +999,10 @@
       <div class="availability">Disponible pour une nouvelle mission</div>
     </div>
     <div class="contact-grid fade-in">
-      <a href="/cdn-cgi/l/email-protection#1f7e6a6d7a73767a716f6d7e6b2c2c2e5f78727e7673317c7072" class="contact-item">
+      <a id="email-link" href="#" class="contact-item">
         <span class="contact-item-icon">✉️</span>
         <span class="contact-item-label">Email</span>
-        <span class="contact-item-value"><span class="__cf_email__" data-cfemail="7415010611181d111a04061500474745341319151d185a171b19">[email&#160;protected]</span></span>
+        <span class="contact-item-value" id="email-display">apbi.consultant&#64;gmail.com</span>
       </a>
       <a href="https://www.linkedin.com/in/aurelien-prat" target="_blank" class="contact-item">
         <span class="contact-item-icon">💼</span>
@@ -1063,6 +1063,14 @@
       } else {
         initLightbox();
       }
+    })();
+
+    // Fix email link
+    (function() {
+      var u = 'apbi.consultant';
+      var d = 'gmail.com';
+      var el = document.getElementById('email-link');
+      if (el) el.href = 'mailto:' + u + '@' + d;
     })();
 
     // Animate on scroll — elements visible by default, animated if JS runs
