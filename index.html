@@ -1028,7 +1028,7 @@
 
   <script>
     // Lightbox
-    function openLightbox(src, caption) {
+    window.openLightbox = function(src, caption) {
       var lb = document.getElementById('lightbox');
       var img = document.getElementById('lightbox-img');
       var cap = document.getElementById('lightbox-caption');
@@ -1038,15 +1038,15 @@
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
-    }
-    function closeLightbox() {
+    };
+    window.closeLightbox = function() {
       var lb = document.getElementById('lightbox');
       lb.className = 'lightbox';
       document.body.style.overflow = '';
       document.body.style.position = '';
       document.body.style.width = '';
-    }
-    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+    };
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') window.closeLightbox(); });
 
     // Animate on scroll — elements visible by default, animated if JS runs
     if ('IntersectionObserver' in window) {
